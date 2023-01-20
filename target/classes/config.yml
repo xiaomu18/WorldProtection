@@ -1,0 +1,13 @@
+ProtectWorlds:
+  mode: "need" # all & not & need
+  list:
+  - "world"
+DefaultMessage: "&a[ WP ] &c你没有权限操作这个世界."
+CustomMessage:
+  world: "&a[ WP ] &c你没有权限操作这个世界."
+AntiExplosion: true
+AntiWorldFly:
+  enable: true
+  worlds:
+    - "world"
+  message: "&a[ WP ] &c此世界已禁止飞行. 已关闭你的飞行模式."

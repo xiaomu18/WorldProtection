@@ -1,0 +1,17 @@
+name: "WorldProtection"
+main: "org.xiaomu.WorldProtection.WorldProtection"
+author: "xiaomu18"
+
+website: "https://github.com/xiaomu18/"
+version: "1.2.0"
+api-version: "1.16"
+description: "一个保护世界防止破坏的插件"
+
+commands:
+  WorldProtection: # 命令的基本名，请不要使用奇怪的字符！
+    aliases: # 别名，方便玩家使用
+      - "wp"
+    usage: "/WorldProtection help 获取命令帮助." # 用法
+    description: "WorldProtection 主命令" # 描述
+    permission: "minecraft.command.WorldProtection" # 需要的权限，通常不用
+    permission-message: "你没有管理员权限！" # 无权限返回的消息，通常不用
