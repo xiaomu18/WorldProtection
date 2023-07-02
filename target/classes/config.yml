@@ -1,11 +1,20 @@
 ProtectWorlds:
-  mode: "need" # all & not & need
+  # 筛选模式
+  # all & not & need (全部 或 下列不 或 下列需要)
+  mode: "need"
   list:
   - "world"
+
 DefaultMessage: "&a[ WP ] &c你没有权限操作这个世界."
+
+# 自定义世界的提示信息
 CustomMessage:
   world: "&a[ WP ] &c你没有权限操作这个世界."
+
+# 是否开启全局禁止爆炸
 AntiExplosion: true
+
+# 禁止玩家在世界飞行
 AntiWorldFly:
   enable: true
   worlds:

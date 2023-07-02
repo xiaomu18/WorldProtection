@@ -14,6 +14,7 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
 import org.bukkit.event.player.PlayerBucketFillEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 
 import java.util.List;
 
@@ -118,6 +119,22 @@ public class Protector implements Listener {
                     event.getPlayer().setAllowFlight(false);
                     player.sendMessage(getColor(WorldProtection.getInstance().getConfig().getString("AntiWorldFly.message")));
                 }
+            }
+        }
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onPlayerInteract(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+        Block block = event.getClickedBlock();
+
+        // 检查玩家与方块的交互
+        if (NeedCancelled(player)) {
+            if (block != null) {
+                // 取消玩家与方块的交互事件
+                event.setCancelled(true);
+                // player.sendMessage("你没有权限与方块交互！");
+                sendActionBar(player, getPromptMessage(player.getWorld().getName()));
             }
         }
     }

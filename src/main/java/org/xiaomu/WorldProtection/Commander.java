@@ -10,6 +10,7 @@ public class Commander implements CommandExecutor {
         commandSender.sendMessage("[ WP ] WorldProtection 插件帮助");
         commandSender.sendMessage("/WorldProtection info 查看保护列表");
         commandSender.sendMessage("/WorldProtection explosion 切换爆炸保护状态 (临时切换, 更改请更改配置文件)");
+        commandSender.sendMessage("/WorldProtection version 显示插件版本信息");
         commandSender.sendMessage("/WorldProtection reload 重载配置文件");
     }
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
@@ -20,6 +21,14 @@ public class Commander implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("help")) {
             sendHelp(commandSender);
+            return true;
+        }
+
+        if (args[0].equalsIgnoreCase("version")) {
+            commandSender.sendMessage("[ WP ] WorldProtection v1.2.1");
+            commandSender.sendMessage("       another: xiaomu18");
+            commandSender.sendMessage("       website: https://github.com/xiaomu18/WorldProtection");
+            commandSender.sendMessage("       Compiled in July 2023");
             return true;
         }
 
@@ -36,7 +45,7 @@ public class Commander implements CommandExecutor {
                 }
             }
 
-            commandSender.sendMessage("爆炸保护: " + Protector.ProtectExplosion);
+            commandSender.sendMessage("全局爆炸保护: " + Protector.ProtectExplosion);
             return true;
         }
 
